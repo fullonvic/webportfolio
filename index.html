@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Victor Jr. M. Fullon | Web Developer Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
-    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap)" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="https://www.facebook.com/jayarmagat23" class="logo">Victor Jr. M. Fullon</a>
+            <a href="#home" class="logo">
+                <span class="logo-icon">&#60;/&#62;</span>
+                Victor Jr. M. Fullon
+            </a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -28,19 +32,37 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero" id="home">
         <div class="hero-content">
-            <p class="hero-greeting">Hi, I'm</p>
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                Available for work
+            </div>
+            <p class="hero-greeting">👋 Hi, I'm</p>
             <h1 class="hero-name">Victor Jr. M. Fullon</h1>
             <h2 class="hero-title">Web Developer</h2>
             <p class="hero-description">
                 I build beautiful, responsive websites and web applications 
-                that solve real problems.
+                that solve real problems and deliver exceptional user experiences.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
             </div>
+            <div class="hero-social">
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
@@ -50,22 +72,49 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                        <img src="img/profile_dev.png" alt="Your Photo" class="about-photo">
+                    <div class="image-wrapper">
+                        <img src="img/profile_dev.png" alt="Victor Jr. M. Fullon" class="about-photo">
+                        <div class="image-border"></div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="about-text">
                     <p>
-                        Hello! I'm a passionate web developer based in [Your City]. 
-                        I enjoy creating things that live on the internet, whether 
-                        that's websites, applications, or anything in between.
+                        Hello! I'm a passionate web developer based in SJDM, Philippines. 
+                        I specialize in creating digital experiences that are both visually 
+                        stunning and highly functional.
                     </p>
                     <p>
-                        My goal is to always build products that provide pixel-perfect, 
-                        performant experiences. I'm currently focused on building 
-                        accessible, human-centered products.
+                        With a strong foundation in modern web technologies, I enjoy building 
+                        products that provide pixel-perfect, performant experiences. I'm 
+                        currently focused on creating accessible, human-centered applications 
+                        that make a difference.
                     </p>
                     <p>
-                        When I'm not coding, you'll find me [your hobbies/interests].
+                        When I'm not coding, you'll find me riding my motorcycle 🏍️, 
+                        exploring new technologies, or contributing to open-source projects.
                     </p>
+                    <div class="about-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Let's Talk
+                        </a>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,23 +124,33 @@
     <section id="projects" class="section projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Some of the projects I've worked on</p>
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <article class="project-card">
                     <div class="project-image">
-                        <div class="image-placeholder">Project Screenshot</div>
+                        <img src="img/logo.jpg" alt="PetVillage Corporate System" class="project-photo">
+                        <div class="project-overlay">
+                            <span class="project-tag">Featured</span>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Project Name</h3>
-                        <p>A brief description of what this project does and the problems it solves.</p>
+                        <h3>Corporate.PetVillage.ph</h3>
+                        <p>A comprehensive HRIS system for daily time records, inventory management, and employee monitoring.</p>
                         <div class="project-tech">
                             <span>HTML</span>
                             <span>CSS</span>
                             <span>JavaScript</span>
+                            <span>Springboot</span>
+                            <span>AWS Lightsail</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                            <a href="pvcorp.html" class="btn btn-small btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-small btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -99,19 +158,27 @@
                 <!-- Project 2 -->
                 <article class="project-card">
                     <div class="project-image">
-                        <div class="image-placeholder">Project Screenshot</div>
+                        <div class="image-placeholder">
+                            <i class="fas fa-code fa-3x"></i>
+                            <span>Project Screenshot</span>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Another Project</h3>
-                        <p>Description of your second project. Highlight key features and your role.</p>
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-featured online store with payment integration, user authentication, and admin dashboard.</p>
                         <div class="project-tech">
                             <span>React</span>
                             <span>Node.js</span>
                             <span>MongoDB</span>
+                            <span>Stripe</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                            <a href="#" class="btn btn-small btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-small btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -119,19 +186,26 @@
                 <!-- Project 3 -->
                 <article class="project-card">
                     <div class="project-image">
-                        <div class="image-placeholder">Project Screenshot</div>
+                        <div class="image-placeholder">
+                            <i class="fas fa-mobile-alt fa-3x"></i>
+                            <span>Project Screenshot</span>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Third Project</h3>
-                        <p>Showcase your versatility with different types of projects.</p>
+                        <h3>Task Management App</h3>
+                        <p>A collaborative task management tool with real-time updates, team workspaces, and progress tracking.</p>
                         <div class="project-tech">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>PostgreSQL</span>
+                            <span>Vue.js</span>
+                            <span>Firebase</span>
+                            <span>Tailwind CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn btn-small">Live Demo</a>
-                            <a href="#" class="btn btn-small btn-outline">GitHub</a>
+                            <a href="#" class="btn btn-small btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="btn btn-small btn-outline">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </article>
@@ -143,35 +217,39 @@
     <section id="skills" class="section skills">
         <div class="container">
             <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Technologies I work with</p>
             <div class="skills-grid">
                 <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3>Frontend</h3>
                     <ul class="skill-list">
-                        <li>HTML5 & CSS3</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>React / Vue</li>
-                        <li>Responsive Design</li>
-                        <li>Sass / SCSS</li>
+                        <li><i class="fas fa-check-circle"></i> HTML5 & CSS3</li>
+                        <li><i class="fas fa-check-circle"></i> JavaScript (ES6+)</li>
+                        <li><i class="fas fa-check-circle"></i> React / Vue.js</li>
+                        <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                        <li><i class="fas fa-check-circle"></i> Sass / SCSS</li>
                     </ul>
                 </div>
                 <div class="skill-category">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
                     <h3>Backend</h3>
                     <ul class="skill-list">
-                        <li>Node.js</li>
-                        <li>Python</li>
-                        <li>REST APIs</li>
-                        <li>SQL / NoSQL</li>
-                        <li>Authentication</li>
+                        <li><i class="fas fa-check-circle"></i> Node.js</li>
+                        <li><i class="fas fa-check-circle"></i> Python</li>
+                        <li><i class="fas fa-check-circle"></i> REST APIs</li>
+                        <li><i class="fas fa-check-circle"></i> SQL / NoSQL</li>
+                        <li><i class="fas fa-check-circle"></i> Spring Boot</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Tools</h3>
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Tools & DevOps</h3>
                     <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                        <li>Terminal / CLI</li>
-                        <li>DevTools</li>
+                        <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
+                        <li><i class="fas fa-check-circle"></i> AWS Lightsail</li>
+                        <li><i class="fas fa-check-circle"></i> VS Code</li>
+                        <li><i class="fas fa-check-circle"></i> Figma</li>
+                        <li><i class="fas fa-check-circle"></i> Docker</li>
                     </ul>
                 </div>
             </div>
@@ -182,29 +260,54 @@
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-intro">
-                I'm currently open to new opportunities. Whether you have a question 
-                or just want to say hi, I'll do my best to get back to you!
-            </p>
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+            <p class="section-subtitle">Have a question or want to work together?</p>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:fullonvic19@gmail.com">fullonvic19@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <span>San Jose del Monte, Philippines</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+639123456789">+63 912 345 6789</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
-            <div class="social-links">
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i> Name
+                        </label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">
+                            <i class="fas fa-comment"></i> Message
+                        </label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
             </div>
         </div>
     </section>
@@ -212,7 +315,21 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Your Name. Built with passion.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Victor Jr. M. Fullon</h3>
+                    <p>Web Developer crafting digital experiences</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Victor Jr. M. Fullon. Built with <i class="fas fa-heart" style="color: #ef4444;"></i> and passion.</p>
+            </div>
         </div>
     </footer>
 

@@ -1,0 +1,321 @@
+/* ==========================================
+   GOOGLE FONTS IMPORT
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================
+   CSS VARIABLES / ROOT
+   ========================================== */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+    --secondary: #64748b;
+    --success: #22c55e;
+    --bg: #f8fafc;
+    --bg-white: #ffffff;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+    --shadow-xl: 0 20px 60px rgba(0,0,0,0.20);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   DARK MODE VARIABLES
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0f172a;
+        --bg-white: #1e293b;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+        --shadow-md: 0 4px 20px rgba(0,0,0,0.4);
+        --shadow-lg: 0 10px 40px rgba(0,0,0,0.5);
+        --primary-light: #1e293b;
+    }
+}
+
+/* ==========================================
+   RESET & GLOBAL STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================
+   PROJECT SHOWCASE
+   ========================================== */
+.project-showcase {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px 24px;
+    text-align: center;
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.project-showcase:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.project-showcase h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--primary), #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.project-showcase .subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.project-showcase .badge {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 6px 20px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================
+   SCREENSHOT GALLERY
+   ========================================== */
+.screenshots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 10px;
+}
+
+.shot {
+    background: var(--bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.shot:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.shot img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+    background: var(--bg);
+}
+
+.shot:hover img {
+    transform: scale(1.03);
+}
+
+.shot .shot-content {
+    padding: 16px 20px 20px;
+    background: var(--bg-white);
+}
+
+.shot h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text);
+    margin: 0 0 4px 0;
+}
+
+.shot .shot-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablets & smaller laptops */
+@media (max-width: 1024px) {
+    .project-showcase {
+        margin: 30px auto;
+        padding: 30px 20px;
+    }
+    
+    .screenshots {
+        gap: 20px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .project-showcase {
+        margin: 20px auto;
+        padding: 24px 16px;
+        border-radius: var(--radius-sm);
+    }
+    
+    .project-showcase h1 {
+        font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    }
+    
+    .project-showcase .subtitle {
+        font-size: 0.95rem;
+        padding: 0 8px;
+        margin-bottom: 30px;
+    }
+    
+    .screenshots {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .shot img {
+        height: 180px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .project-showcase {
+        padding: 16px 12px;
+    }
+    
+    .project-showcase h1 {
+        font-size: 1.6rem;
+    }
+    
+    .project-showcase .badge {
+        font-size: 0.75rem;
+        padding: 4px 14px;
+    }
+    
+    .shot img {
+        height: 160px;
+    }
+    
+    .shot .shot-content {
+        padding: 12px 16px 16px;
+    }
+    
+    .shot h3 {
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================
+   UTILITY & ACCESSIBILITY
+   ========================================== */
+
+/* Focus styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+img:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   SCROLLBAR STYLING
+   ========================================== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+@media print {
+    body {
+        background: #fff !important;
+        padding: 0 !important;
+    }
+    
+    .project-showcase {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        background: #fff !important;
+    }
+    
+    .shot {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        break-inside: avoid;
+        background: #fff !important;
+    }
+    
+    .shot .shot-content {
+        background: #fff !important;
+    }
+}
