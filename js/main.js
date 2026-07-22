@@ -87,6 +87,62 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+(function() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const htmlElement = document.documentElement;
+    const icon = darkModeToggle.querySelector('i');
+    
+    // Check for saved user preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme) {
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+    } else if (prefersDark) {
+        htmlElement.setAttribute('data-theme', 'dark');
+        updateIcon('dark');
+        localStorage.setItem('theme', 'dark');
+    }
+    
+    // Toggle dark mode
+    darkModeToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme);
+        
+        // Optional: Add a smooth transition animation
+        document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+        setTimeout(() => {
+            document.body.style.transition = '';
+        }, 300);
+    });
+    
+    function updateIcon(theme) {
+        if (theme === 'dark') {
+            icon.className = 'fas fa-sun';
+            darkModeToggle.setAttribute('aria-label', 'Switch to light mode');
+        } else {
+            icon.className = 'fas fa-moon';
+            darkModeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        }
+    }
+    
+    // Optional: Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            updateIcon(newTheme);
+        }
+    });
+})();
+
 // ===== Intersection Observer for Animations (optional) =====
 const observerOptions = {
     threshold: 0.1,
