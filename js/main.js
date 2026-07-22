@@ -143,6 +143,64 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 })();
 
+// ===== CV Download Functionality =====
+(function() {
+    const cvButtons = document.querySelectorAll('[download]');
+    
+    cvButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Track CV download (optional analytics)
+            console.log('CV Download initiated');
+            
+            // Add a small animation or feedback
+            const icon = this.querySelector('i');
+            if (icon) {
+                icon.style.animation = 'none';
+                setTimeout(() => {
+                    icon.style.animation = 'bounce 0.5s ease';
+                }, 10);
+            }
+            
+            // Optional: Show a success message
+            showDownloadNotification('Downloading CV...');
+            
+            // Let the download proceed naturally
+            // The download attribute will handle the file download
+        });
+    });
+    
+    // Optional: Show notification
+    function showDownloadNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'download-notification';
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: var(--color-primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 10000;
+            animation: slideInRight 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(50px)';
+            notification.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 2000);
+    }
+})();
+
 // ===== Intersection Observer for Animations (optional) =====
 const observerOptions = {
     threshold: 0.1,

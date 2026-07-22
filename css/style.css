@@ -1279,3 +1279,44 @@ ul {
         height: 36px;
     }
 }
+
+/* ===== Download Button Animation ===== */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Download notification */
+.download-notification {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10000;
+    animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Dark mode notification */
+[data-theme="dark"] .download-notification {
+    background: var(--color-primary-dark);
+}
